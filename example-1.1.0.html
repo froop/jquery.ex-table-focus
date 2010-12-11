@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery exTable Focus + exInPlace Editor :: Demo</title>
+		<link rel="stylesheet" type="text/css" href="./demo.css"/>
+		<style>
+			tr.ex-table-current-row td{
+				background:#ffdddd;
+			}
+			input{
+				width:50%;
+			}
+			table{
+				table-layout:fixed;
+				width:90%;
+			}
+			table.ex{
+				margin:1em 16px;
+				background-color:#e0e0e0;
+				border:solid 2px #f4f4f4;
+			}
+			table.ex tr{
+				background-color:#fafafa;
+			}
+			table.ex th{
+				width:10em;
+				background-color:#e8e8e8;
+				color:#888;
+				text-align:left;
+			}
+			table.ex th,
+			table.ex td{
+				padding:8px 16px;
+				vertical-align:top;
+			}
+			div.ex1 table.ex th{
+				width:auto;
+				text-align:center;;
+			}
+			
+			div.ex1 table.ex th.no{
+				width:4em;
+			}
+			div.ex1 table.ex th.table-name,
+			div.ex1 table.ex th.table-name-jp{
+				width:25%;
+			}
+			div.ex1 input,
+			div.ex1 textarea{
+				width:90%;
+			}
+			div.ex1 a{
+				color:#0060ff;
+				text-decoration:none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="./exinplaceeditor/exinplaceeditor.css"/>
+		<script type="text/javascript" src="./jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="./exinplaceeditor/jquery.exinplaceeditor.0.1.4.js"></script>
+		<script type="text/javascript" src="./jquery.extablefocus-0.1.0.js"></script>
+		<script>
+			jQuery(function($){
+				$('table').exTableFocus().delegate('a','mouseover focus',function(){
+					$(this).exInPlaceEditor({
+						nowHover : true,
+						saveLabel : false,
+						cancelLabel : false,
+						editorType : 'input'
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<h1>jQuery exTable Focus + exInPlace Editor :: Demo</h1>
+		</div>
+		<div class="body">
+
+			<div class="ex ex1">
+				<ul>
+					<li>矢印キーの入力でフォーカスを移動できます</li>
+					<li>リンクをクリック、又はリンクにフォーカスしてエンターキーを押すと、値を編集できるようになります</li>
+					<li>編集した値は、エンターキーで確定、ESC キーで取り消しすることができます</li>
+				</ul>
+				<table class="ex">
+					<tr>
+						<th class="no">No</th>
+						<th class="table-name">テーブル名</th>
+						<th class="table-name-jp">和名</th>
+						<th class="desc">概要</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a class="edit table-name" href="#">dept_mastar</a></td>
+						<td><a class="edit table-name-jp" href="#">部署マスタ</a></td>
+						<td><a class="edit desc" href="#">部署情報を管理するテーブル</a></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><a class="edit table-name" href="#">emp_mastar</a></td>
+						<td><a class="edit table-name-jp" href="#">社員マスタ</a></td>
+						<td><a class="edit desc" href="#">社員情報を管理するテーブル</a></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td><a class="edit table-name" href="#">privs_mastar</a></td>
+						<td><a class="edit table-name-jp" href="#">権限マスタ</a></td>
+						<td><a class="edit desc" href="#">権限情報を管理するテーブル</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a class="edit table-name" href="#">(none)</a></td>
+						<td><a class="edit table-name-jp" href="#">(none)</a></td>
+						<td><a class="edit desc" href="#">(none)</a></td>
+					</tr>
+				</table>
+			</div>
+
+
+
+		</div>
+		<div class="footer">
+			<a class="article" href="http://d.hatena.ne.jp/cyokodog/">Cyokodog::Diary</a>
+		</div>
+	</body>
+</html>

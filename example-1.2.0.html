@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery exTableFocus :: Demo</title>
+		<link rel="stylesheet" type="text/css" href="./demo.css"/>
+		<style>
+			tr.ex-table-current-row td{
+				background:#ffdddd;
+			}
+			table{
+				background:#ddd;
+				margin-bottom:10em;
+			}
+			td{
+				padding:4px 0;
+				background:#eee;
+				vertical-align:top;
+			}
+			td input {
+				xborder:none;
+			}
+			td textarea{
+				height:4em;
+				xborder:none;
+				overflow:auto;
+			}
+			td input,
+			td textarea,
+			td.blank{
+				width:180px;
+			}
+			td.blank{
+				height:1.8em;
+			}
+			td ul{
+				margin:0 2em;
+			}
+		</style>
+		<script type="text/javascript" src="./jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="./jquery.extablefocus-0.1.0.js"></script>
+		<script>
+			jQuery(function($){
+				$('#ex1_content table').exTableFocus({
+					overrideCrControl : true
+				});
+				$('#ex2_content table').exTableFocus({
+					overrideCrControl : true,
+					verticalCrControl : true
+				});
+				if (location.hash) {
+					$('div.content').hide();
+					$(location.hash + '_content').show().find('a,textarea,input,select').eq(0).focus();
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<h1>jQuery exTable Focus :: Demo</h1>
+		</div>
+		<div class="body">
+			<div id="ex1_content" class="content">
+				<h2>overrideCrControl パラメータの指定</h2>
+				<ul>
+					<li>エンターキーでもフォーカス移動できます</li>
+				</ul>
+				<table>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+						<td><input/></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="ex2_content" class="content">
+				<h2>verticalCrControl パラメータの指定</h2>
+				<ul>
+					<li>エンターキーで垂直方向にフォーカス移動できます</li>
+				</ul>
+				<table>
+					<tr>
+						<td class="blank"></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="wrapper">
+				<a class="article" href="http://d.hatena.ne.jp/cyokodog/">Cyokodog::Diary</a>
+			</div>
+		</div>
+	</body>
+</html>

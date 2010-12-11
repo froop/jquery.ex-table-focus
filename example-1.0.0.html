@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery exTableFocus :: Demo</title>
+		<link rel="stylesheet" type="text/css" href="./demo.css"/>
+		<style>
+			tr.ex-table-current-row td{
+				background:#ffdddd;
+			}
+			table{
+				background:#ddd;
+				margin-bottom:10em;
+			}
+			td{
+				padding:4px 0;
+				background:#eee;
+				vertical-align:top;
+			}
+			td input {
+				xborder:none;
+			}
+			td textarea{
+				height:4em;
+				xborder:none;
+				overflow:auto;
+			}
+			td input,
+			td textarea,
+			td.blank{
+				width:180px;
+			}
+			td.blank{
+				height:1.8em;
+			}
+			td ul{
+				margin:0 2em;
+			}
+		</style>
+		<script type="text/javascript" src="./jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="./jquery.extablefocus-0.1.0.js"></script>
+		<script>
+			jQuery(function($){
+				$('table').exTableFocus();
+				if (location.hash) {
+					$('div.content').hide();
+					$(location.hash + '_content').show().find('a,textarea,input,select').eq(0).focus();
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<h1>jQuery exTable Focus :: Demo</h1>
+		</div>
+		<div class="body">
+			<div id="ex1_content" class="content">
+				<h2>INPUT ELEMENT</h2>
+				<ul>
+					<li>Shift + 矢印キーの入力でフォーカスを移動できます</li>
+					<li>Opera 以外では、Shift を押さなくても上下移動が可能です</li>
+				</ul>
+				<table>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="ex2_content" class="content">
+				<h2>INPUT + TEXTAREA ELEMENT</h2>
+				<ul>
+					<li>Shift + 矢印キーの入力でフォーカスを移動できます</li>
+				</ul>
+				<table>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><textarea></textarea></td>
+						<td><textarea></textarea></td>
+						<td class="blank"></td>
+						<td><textarea></textarea></td>
+					</tr>
+					<tr>
+						<td><textarea></textarea></td>
+						<td><textarea></textarea></td>
+						<td class="blank"></td>
+						<td><textarea></textarea></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><textarea></textarea></td>
+						<td><textarea></textarea></td>
+						<td class="blank"></td>
+						<td><textarea></textarea></td>
+					</tr>
+					<tr>
+						<td><textarea></textarea></td>
+						<td><textarea></textarea></td>
+						<td class="blank"></td>
+						<td><textarea></textarea></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="ex3_content" class="content">
+				<h2>INPUT + SELECT ELEMENT</h2>
+				<ul>
+					<li>Shift + 矢印キーの入力でフォーカスを移動できます</li>
+				</ul>
+				<table>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td class="blank"></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+					</tr>
+					<tr>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td class="blank"></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/></td>
+						<td class="blank"></td>
+						<td><input/></td>
+					</tr>
+					<tr>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td class="blank"></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+					</tr>
+					<tr>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td class="blank"></td>
+						<td><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+					</tr>
+				</table>
+			</div>
+
+
+			<div id="ex4_content" class="content">
+				<h2>INPUT + A ELEMENT</h2>
+				<ul>
+					<li>Shift + 矢印キーの入力でフォーカスを移動できます</li>
+					<li>Opera 以外では、Shift を押さなくても上下左右の移動が可能です</li>
+				</ul>
+				<table>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+				</table>
+			</div>
+
+
+			<div id="ex5_content" class="content">
+				<h2>MIX ELEMENT</h2>
+				<ul>
+					<li>Shift + 矢印キーの入力でフォーカスを移動できます</li>
+				</ul>
+				<table>
+					<tr>
+						<td><input/></td>
+						<td><input/>
+							<ul>
+								<li><a href="javascript:void(0)">link</a></li>
+								<li><a href="javascript:void(0)">link</a></li>
+							</ul>
+						</td>
+						<td><input/><br/><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td><input/><br/><textarea></textarea><br/>
+							<ul>
+								<li><a href="javascript:void(0)">link</a></li>
+								<li><a href="javascript:void(0)">link</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><textarea></textarea></td>
+						<td><textarea></textarea></td>
+						<td class="blank"></td>
+						<td><textarea></textarea></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td><input/></td>
+						<td><input/>
+							<ul>
+								<li><a href="javascript:void(0)">link</a></li>
+								<li><a href="javascript:void(0)">link</a></li>
+							</ul>
+						</td>
+						<td><input/><br/><select><option>aaa</option><option>bbb</option><option>ccc</option></select></td>
+						<td><input/><br/><textarea></textarea><br/>
+							<ul>
+								<li><a href="javascript:void(0)">link</a></li>
+								<li><a href="javascript:void(0)">link</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><textarea></textarea></td>
+						<td><textarea></textarea></td>
+						<td class="blank"></td>
+						<td><textarea></textarea></td>
+					</tr>
+					<tr>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td><a href="javascript:void(0)">link</a></td>
+						<td class="blank"></td>
+						<td><a href="javascript:void(0)">link</a></td>
+					</tr>
+				</table>
+			</div>
+
+
+
+		</div>
+		<div class="footer">
+			<div class="wrapper">
+				<a class="article" href="http://d.hatena.ne.jp/cyokodog/">Cyokodog::Diary</a>
+			</div>
+		</div>
+	</body>
+</html>
