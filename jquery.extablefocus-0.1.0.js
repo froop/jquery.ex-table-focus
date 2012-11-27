@@ -1,6 +1,6 @@
 /*
- * 	exTableFocus 0.1.0.f1 - jQuery plugin
- *	written by Cyokodog	
+ *	exTableFocus 0.1.0.f2 - jQuery plugin
+ *	written by Cyokodog
  *
  *	Copyright (c) 2010 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
  *	Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -139,7 +139,7 @@
 			var o = this, c = o.config;
 			if (!currentCell) currentCell = c.currentCell;
 			var cellIndex = currentCell.get(0).cellIndex;
-			var nextCell = currentCell.parent()[direction]().find('td').eq(cellIndex);
+			var nextCell = currentCell.parent()[direction]().find('td,th').eq(cellIndex);
 			if (nextCell.size() == 0){
 				if (o._isMozillaSelect()) o._focusField(c.currentField);
 				return o;
