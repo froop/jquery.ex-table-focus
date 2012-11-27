@@ -1,5 +1,5 @@
 /*
- * 	exTableFocus 0.1.0 - jQuery plugin
+ * 	exTableFocus 0.1.0.f1 - jQuery plugin
  *	written by Cyokodog	
  *
  *	Copyright (c) 2010 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
@@ -138,7 +138,7 @@
 		_moveRow : function ( direction, currentCell ){
 			var o = this, c = o.config;
 			if (!currentCell) currentCell = c.currentCell;
-			var cellIndex = currentCell.attr('cellIndex');
+			var cellIndex = currentCell.get(0).cellIndex;
 			var nextCell = currentCell.parent()[direction]().find('td').eq(cellIndex);
 			if (nextCell.size() == 0){
 				if (o._isMozillaSelect()) o._focusField(c.currentField);
