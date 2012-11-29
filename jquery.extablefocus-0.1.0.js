@@ -1,5 +1,5 @@
 /*
- *	exTableFocus 0.1.0.f2 - jQuery plugin
+ *	exTableFocus 0.1.0.f3 - jQuery plugin
  *	written by Cyokodog
  *
  *	Copyright (c) 2010 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
@@ -58,7 +58,7 @@
 				}
 				else
 				if (evt.type == 'keydown' && !$.browser.opera) {
-					var currentTagName = c.currentField.attr('tagName');
+					var currentTagName = c.currentField.get(0).tagName;
 					if (evt.keyCode == c.ctrlKey) c.isCtrl = true;
 					else if (evt.keyCode == c.shiftKey) c.isShift = true;
 					else
@@ -100,7 +100,7 @@
 		},
 		_isMozillaSelect : function(target) {
 			var o = this, c = o.config;
-			return $.browser.mozilla && (target || c.currentField).attr('tagName') == 'SELECT';
+			return $.browser.mozilla && (target || c.currentField).get(0).tagName == 'SELECT';
 		},
 		_focusField : function(fields , retryEvent){
 			var o = this, c = o.config;
