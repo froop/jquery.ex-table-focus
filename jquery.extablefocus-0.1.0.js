@@ -1,5 +1,5 @@
 /*
- *	exTableFocus 0.1.0.f3 - jQuery plugin
+ *	exTableFocus 0.1.0.f4 - jQuery plugin
  *	written by Cyokodog
  *
  *	Copyright (c) 2010 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
@@ -108,7 +108,7 @@
 			var nextElem;
 			fields.each(function(index){
 				var elem = fields.eq(index);
-				if (!elem.is(':hidden')) {
+				if (!elem.is(':hidden') && !elem.is(':disabled')) {
 					nextElem = elem;
 					return false;
 				}
